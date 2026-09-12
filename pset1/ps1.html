@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kat Newcomb - About Me</title>
+    </head>
+
+<body>
+    <!-- 1. Your name in a heading 1 tag. -->
+    <h1>Kat Newcomb</h1>
+    <!-- 2. A few sentences about a trip or getaway that you took in the past few years. -->
+    <p>I took a trip to Singapore and Thailand last year to visit my family. I had an incredible time shopping, trying unique foods, snorkeling, and visiting an elephant sactuary. I'm planning to return again next year!</p>
+    <!-- 3. A bulleted list of your 3 favorite pet names and what tyle of animal goes with each- for example: "A cat named Kiwi Strawberry" -->
+    <ul>
+        <li>A dog named Bailey</li>
+        <li>A dog named Jack</li>
+        <li>A horse named Joker</li>
+    </ul>
+    <!--4. A link to the website of your favorite restaurant (include the name of the restaurant).  Make sure the link opens in a new tab. -->
+    <p>My favorite restaurant is
+    <a href="https://www.rosciolinyc.com/" target="_blank">Roscioli</a>.</p>
+    <!-- 5. An image of your favorite food with a sentence or two describing it.  Set the attributes align=left and width=300 on the image to make the text wrap.  Make sure the image file is less than 50k.-->
+    <img src="images/food.jpg" align="left" width="300" alt="Delicious pastas">
+    <p>Incredible dishes sourced from Roman cuisine. The cheeses, pastas, and wines are beautifully curated and paired.</p>
+    <!-- 6. A table with 3 columns that contains the following data about 4 of your favorite books. For each book, data in each column to include:-->
+    <br clear="all">
+    <table border="1">
+    <tr>
+        <th>Title</th><th>Cover</th><th>Author</th>
+    </tr>
+    <tr>
+        <td>The Woman in Cabin 10</td>
+        <td><img src="images/book1.jpg" width="100" alt="cover"></td>
+        <td>Ruth Ware</td>
+    </tr>
+    <tr>
+        <td>The It Girl</td>
+        <td><img src="images/book2.jpg" width="100" alt="cover"></td>
+        <td>Ruth Ware</td>
+    </tr>
+    <tr>
+        <td>In a Dark Dark Wood</td>
+        <td><img src="images/book3.jpg" width="100" alt="cover"></td>
+        <td>Ruth Ware</td>
+    </tr>
+    <tr>
+        <td>The Goldfinch</td>
+        <td><img src="images/book4.jpg" width="100" alt="cover"></td>
+        <td>Donna Tartt</td>
+    </tr>
+    </table>
+
+    <!-- 7. Create a form to let visitors sign a "guest book" -  get a user's first and last name, email, and state. Use a <select> element to choose the state (5-6 states in your area is sufficient). Labels for form elements should be placed in a <label> tag.-->
+    <form>
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName">
+
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+
+    <label for="state">State</label>
+    <select id="state" name="state">
+        <option value="MA">Massachusetts</option>
+        <option value="NY">New York</option>
+        <option value="VT">Vermont</option>
+        <option value="ME">Maine</option>
+        <option value="RI">Rhode Island</option>
+        <option value="CT">Connecticut</option>
+    </select>
+
+    <button type="submit">Sign Guest Book</button>
+    </form>
+
+
+</body>
+</html>
