@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kat Newcomb - About Me</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            /* 1. Set the font to a sans serif google font. */
+            body {
+                font-family: 'Poppins', sans-serif;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px 40px;
+            }
+            /* 2. Set the color and size of all H1 to a reddish color, size 32px */
+            h1 {
+                color: #9e190a;
+                font-size: 32px;
+            }
+            /* 3. Set all H2 to the color of your choice and have a margin of 30px below them. */
+            h2 {
+                color: #178e42;
+                margin-bottom: 30px;
+            }
+            /* 4. Put a border around your list and center it on the page (note:  do NOT center the list items)  */
+            ul {
+                border: 2px solid #333;
+                width: 260px;
+                margin: 20px auto;
+                padding: 15px 30px;
+            }
+            /* 5. Change the display of your favorite food image to be in a div as a background image.  (Hint - you will need to set the height and width of the dive) Place the explanatory text in a div that is adjacent to it. (Hint: use display:inline-block) */
+            .food-image {
+                width: 300px;
+                height: 300px;
+                background-image: url('images/food.jpg');
+                background-size: cover;
+                background-position: center;
+                display: inline-block;
+                vertical-align: top;
+                border-radius: 4px;
+            }
+            .food-text {
+                display: inline-block;
+                vertical-align: top;
+                width: 300px;
+                margin-left: 20px;
+            }
+            table td, table th {
+                padding: 8px 12px;
+            }
+            /* 6. Add a background color to alternate rows in the table (Hint: use the pseudo-element :even or :odd) */
+            table tr:nth-child(odd) {
+                background-color: #ffffff;
+            }
+            table tr:nth-child(even) {
+                background-color: #c4c2c2;
+            }
+            /* 7. Labels for the form should be in their own column and form elements should be in a column to the right of the labels (you may want to put them in a separate <div> or <span>).  All labels should be right aligned. */
+            .form-row {
+                margin-bottom: 12px;
+            }
+            .form-row label {
+                display: inline-block;
+                width: 120px;
+                text-align: right;
+                margin-right: 10px;
+            }
+            /* 8. Challenge problem (optional + 5 points): Add icons for Facebook and Twitter (X) to the page that are in a fixed position of 100px from the top and 35px in from the right corner of the page. The icons should link to facebook.com and x,com respectively and the links should open in a new tab. */
+            .social-icons {
+                position: fixed;
+                top: 100px;
+                right: 35px;
+                z-index: 999;
+            }
+            .social-icons a {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-size: cover;
+                background-position: center;
+                border-radius: 50%;
+                margin-bottom: 15px;
+            }
+            .social-icons a:last-child {
+                margin-bottom: 0;
+            }
+            .social-icons .facebook {
+                background-image: url('images/facebook.jpg');
+            }
+            .social-icons .x {
+                background-image: url('images/x.jpg');
+            }
+            @media (max-width: 600px) {
+                .social-icons {
+                    top: 20px;
+                    right: 10px;
+                }
+                .social-icons a {
+                    width: 32px;
+                    height: 32px;
+                    margin-bottom: 10px;
+                }
+            }
+        </style>
+    </head>
+
+<body>
+    <!-- 1. Your name in a heading 1 tag. -->
+    <h1>Kat Newcomb</h1>
+    <h2>My Recent Trip</h2>
+    <!-- 2. A few sentences about a trip or getaway that you took in the past few years. -->
+    <p>I took a trip to Singapore and Thailand last year to visit my family. I had an incredible time shopping, trying unique foods, snorkeling, and visiting an elephant sactuary. I'm planning to return again next year!</p>
+    <h2>My Favorite Pets</h2>
+    <!-- 3. A bulleted list of your 3 favorite pet names and what tyle of animal goes with each- for example: "A cat named Kiwi Strawberry" -->
+    <ul>
+        <li>A dog named Bailey</li>
+        <li>A dog named Jack</li>
+        <li>A horse named Joker</li>
+    </ul>
+    <h2>My Favorite Restaurant</h2>
+    <!--4. A link to the website of your favorite restaurant (include the name of the restaurant).  Make sure the link opens in a new tab. -->
+    <p>My favorite restaurant is
+    <a href="https://www.rosciolinyc.com/" target="_blank">Roscioli</a>.</p>
+    <h2>My Favorite Food</h2>
+    <!-- 5. An image of your favorite food with a sentence or two describing it.  Set the attributes align=left and width=300 on the image to make the text wrap.  Make sure the image file is less than 50k.-->
+    <div class="food-image" role="img" aria-label="Delicious pastas"></div>
+    <div class="food-text">
+        <p>Incredible dishes sourced from Roman cuisine. The cheeses, pastas, and wines are beautifully curated and paired.</p>
+    </div>
+    <h2>My Favorite Books</h2>
+    <!-- 6. A table with 3 columns that contains the following data about 4 of your favorite books. For each book, data in each column to include:-->
+    <table border="1">
+    <tr>
+        <th>Title</th><th>Cover</th><th>Author</th>
+    </tr>
+    <tr>
+        <td>The Woman in Cabin 10</td>
+        <td><img src="images/book1.jpg" width="100" alt="cover"></td>
+        <td>Ruth Ware</td>
+    </tr>
+    <tr>
+        <td>The It Girl</td>
+        <td><img src="images/book2.jpg" width="100" alt="cover"></td>
+        <td>Ruth Ware</td>
+    </tr>
+    <tr>
+        <td>In a Dark Dark Wood</td>
+        <td><img src="images/book3.jpg" width="100" alt="cover"></td>
+        <td>Ruth Ware</td>
+    </tr>
+    <tr>
+        <td>The Goldfinch</td>
+        <td><img src="images/book4.jpg" width="100" alt="cover"></td>
+        <td>Donna Tartt</td>
+    </tr>
+    </table>
+    <h2>Sign My Guest Book</h2>
+    <!-- 7. Create a form to let visitors sign a "guest book" -  get a user's first and last name, email, and state. Use a <select> element to choose the state (5-6 states in your area is sufficient). Labels for form elements should be placed in a <label> tag.-->
+    <form>
+        <div class="form-row">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+        <div class="form-row">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+        <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-row">
+            <label for="state">State</label>
+            <select id="state" name="state">
+                <option value="MA">Massachusetts</option>
+                <option value="NY">New York</option>
+                <option value="VT">Vermont</option>
+                <option value="ME">Maine</option>
+                <option value="RI">Rhode Island</option>
+                <option value="CT">Connecticut</option>
+            </select>
+        </div>
+        <button type="submit">Sign Guest Book</button>
+    </form>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" class="facebook" aria-label="Facebook"></a>
+        <a href="https://x.com" target="_blank" class="x" aria-label="X (Twitter)"></a>
+    </div>
+
+</body>
+</html>
