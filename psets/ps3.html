@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pset 3</title>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+</style>
+<script>
+    // Problem 1: Ask the user for their first name. Now ask the user for their last name.
+    // (You will need to use prompt() twice). Display the response in a popup (alert) as:
+    // "Your name is <name>" - filling in their full name.
+    // Now ask the user for the number of children they have. Display the number of children
+    // on the page as a grammatically correct sentence ("You have no children", "You have 1 child"
+    // or "You have 2 children", etc). Note - this should be displayed on the page (not in a popup)
+    function problem1()
+    {
+        first = prompt("What's your first name?", "");
+        last = prompt("What's your last name?", "");
+        alert("Your name is "+first+ " "+last);
+
+        do {
+            kids = prompt("How many children do you have?", "0");
+        } while (isNaN(kids));
+        kids = parseInt(kids);
+
+        if (kids == 0)
+            sentence = "You have no children";
+        else if (kids == 1)
+            sentence = "You have 1 child";
+        else
+            sentence = "You have "+kids+" children";
+
+        document.getElementById("problem1").innerHTML = sentence;
+    }
+
+    // Problem 2: Create a program that gets three numbers using prompt() and displays them
+    // in the console in order (smallest to largest). You may not use a sort function
+    // (other than what you create yourself)
+    function problem2()
+    {
+        do {
+            a = prompt("Enter the first number", "0");
+        } while (isNaN(a));
+        do {
+            b = prompt("Enter the second number", "0");
+        } while (isNaN(b));
+        do {
+            c = prompt("Enter the third number", "0");
+        } while (isNaN(c));
+        a = parseFloat(a);
+        b = parseFloat(b);
+        c = parseFloat(c);
+
+        if (a > b) { 
+            temp = a; 
+            a = b; 
+            b = temp;
+        }
+        if (b > c) { 
+            temp = b; 
+            b = c; 
+            c = temp; 
+        }
+        if (a > b) { 
+            temp = a; 
+            a = b; 
+            b = temp; 
+        }
+        console.log("In order: " + a + "," + b + "," + c);
+    }
+
+    // Problem 3: Get two numbers from the user using prompt() that will represent a range
+    // (ex., 2 through 20). Display only odd numbers in the range on the page. Then display
+    // the sum of all of the numbers in the range on the page. You must do this using only one loop.
+    function problem3()
+    {
+        do {
+            start = prompt("Enter the start of the range", "0");
+        } while (isNaN(start));
+        do {
+            end = prompt("Enter the end of the range", "0");
+        } while (isNaN(end));
+        start = parseInt(start);
+        end = parseInt(end);
+
+        if (start > end) { 
+            temp = start; 
+            start = end; 
+            end = temp; 
+        }
+        
+        odds = "";
+        sum = 0;
+        for (i = start; i <= end; i++)
+        {
+            if (i % 2)
+                odds += i+" ";
+            sum += i;
+        }
+        document.getElementById("problem3").innerHTML =
+            "Odd nums from "+start+" to "+end+": "+odds+"<br />" +
+            "The sum of all nums from "+start+" to "+end+" is "+sum;
+    }
+
+    function runAll()
+    {
+        problem1();
+        problem2();
+        problem3();
+    }
+    window.onload = runAll;
+</script>
+</head>
+<body>
+    <h1>Pset 3</h1>
+    <h2>Problem 1</h2>
+    <div id="problem1">&nbsp;</div>
+    <h2>Problem 2</h2>
+    <div>Check the console to see the numbers in order.</div>
+    <h2>Problem 3</h2>
+    <div id="problem3">&nbsp;</div>
+</body>
+</html>
