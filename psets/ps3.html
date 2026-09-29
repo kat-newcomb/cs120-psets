@@ -49,10 +49,12 @@
         do {
             c = prompt("Enter the third number", "0");
         } while (isNaN(c));
+
         a = parseFloat(a);
         b = parseFloat(b);
         c = parseFloat(c);
 
+        //put values in order with 3 swaps
         if (a > b) { 
             temp = a; 
             a = b; 
@@ -95,6 +97,7 @@
         sum = 0;
         for (i = start; i <= end; i++)
         {
+            //i%2 is remainder when i is divided by 2
             if (i % 2)
                 odds += i+" ";
             sum += i;
@@ -104,6 +107,8 @@
             "The sum of all nums from "+start+" to "+end+" is "+sum;
     }
 
+    //  all functions per problem listed above 
+    // plus an extra function that calls all of them runAll()
     function runAll()
     {
         problem1();
