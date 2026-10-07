@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pset 4 - Problem 1</title>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+</style>
+</head>
+<body>
+    <h1>Pset 4 - Problem 1</h1>
+    <div id="answer">&nbsp;</div>
+<script>
+    /*  Task 0:
+        Create a <div> on the page (using HTML) with an id = "answer".  It will be used to display results.
+        Hint: You may use document.getElementById("answer").innerHTML or document.getElementById("answer").textContent to access the content of the div 
+    */
+
+    /*  Problem 1:
+        a) Create a function that takes two parameters: an array of numbers and a value.  The function should return the count of the number of items in the array that are less than the value.
+
+        Solve this 2 ways: once using a for loop, and also using the array method filter or reduce. (call the functions countA and countB)
+
+        For example, if the array is 3 55 30 28 9 12
+        and the value is:  10
+        the function would return 2
+
+        b) Create a function called testCount() to create the array, call countA() and countB() and display the results in the <div> created in Task 0 .  You may hard code the array and the value in the call to count().  testCount() should have no parameters or return value.
+
+        Call testCount() directly at the end of the script.
+    */
+    function countA(arr, val)
+    {
+        count = 0;
+        for (i=0; i<arr.length; i++)
+        {
+            if (arr[i] < val)
+                count++;
+        }
+        return count;
+    }
+
+    function countB(arr, val)
+    {
+        return arr.filter(item => item < val).length;
+    }
+
+    function testCount()
+    {
+        nums = [3, 55, 30, 28, 9, 12];
+        val = 10;
+        resultA = countA(nums, val);
+        resultB = countB(nums, val);
+        document.getElementById("answer").innerHTML =
+            "countA result: "+resultA+"<br />"+
+            "countB result: "+resultB;
+    }
+
+    testCount();
+</script>
+</body>
+</html>

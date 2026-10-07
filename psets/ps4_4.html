@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pset 4 - Problem 4</title>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+    #results {border: 1px solid #000;}
+</style>
+<script>
+    /*  Problem 4:
+        Create a <select> element as a list (not a dropdown element- hint, set the size attribute of the <select> to 8 ).
+        Create the <select> tag in HTML and then create the <option> tags using JavaScript.  Each option will have the name of a state. Hint: first create an array or the states and then use JS to display the options on the page. The first item should be selected when the page is displayed.
+        Using HTML, create a button labeled "Add State"
+        Add an <hr> below the list and button.
+        Below the <hr> add a div and a button labeled "Clear States" with id="results".  Suggested - add a border to the div
+        Interaction: When the user clicks the "Add State" button, the state in the list that is currently selected should "jump" to the results div (and disappear from the upper div).  The user should be able to move any number of states one click at a time.
+        If the user clicks "Clear States" the div should be emptied and all states should return to the upper div
+    */
+    states = ["California", "Utah", "New York", "D.C.", "Illinois", "Massachusetts", "New Jersey", "Connecticut"];
+    available = [...states];
+    moved = [];
+
+    function renderSelect()
+    {
+        options = available.map(state => "<option value='"+state+"'>"+state+"</option>");
+        document.getElementById("stateList").innerHTML = options.join('');
+        if (available.length > 0)
+            document.getElementById("stateList").selectedIndex = 0;
+    }
+
+    function renderResults()
+    {
+        items = moved.map(state =>"<div>"+state+"</div>");
+        document.getElementById("results").innerHTML = items.join('');
+    }
+
+    function addState()
+    {
+        index = document.getElementById("stateList").selectedIndex;
+        if (index >= 0)
+        {
+            moved.push(available[index]);
+            available = available.filter((state, i) => i !=index);
+            renderSelect();
+            renderResults();
+        }
+    }
+
+    function clearStates()
+    {
+        available = [...states];
+        moved = [];
+        renderSelect();
+        renderResults();
+    }
+
+    window.onload = function()
+    {
+        renderSelect();
+        document.getElementById("addState").onclick = addState;
+        document.getElementById("clearStates").onclick = clearStates;
+    }
+</script>
+</head>
+<body>
+    <h1>Pset 4 - Problem 4</h1>
+    <select id="stateList" size="8"></select>
+    <br /><br />
+    <input type="button" id="addState" value="Add State">
+    <hr />
+    <div id="results">&nbsp;</div>
+    <input type="button" id="clearStates" value="Clear States">
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pset 4 - Problem 3</title>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+    label {padding-right: 8px;}
+</style>
+<script>
+    /*  Problem 3:
+        Create a form with an input box to get a user's name
+        Add 3 buttons to the form using <input type = 'button'>. The buttons should be labeled:  "Hello", "Good Bye", and "Greetings" respectively
+        Do not add a submit button to the form
+        Create a function called "speak" that has a parameter called "prefix"
+        ie,    speak(prefix)
+        speak() should display the prefix followed by the name in the input box - the result should be displayed in the div from task 0
+        for example, if the user enters "Bill" in the input box, speak("Hello") should display:  "Hello Bill"
+        Assign event handlers such that clicking a button calls the speak function.  These should be assigned during window.onload.
+    */
+    function speak(prefix)
+    {
+        userName = document.getElementById("userName").value;
+        document.getElementById("answer").innerHTML = prefix+" "+userName;
+    }
+    window.onload = function()
+    {
+        document.getElementById("btnHello").onclick = function() { speak("Hello"); };
+        document.getElementById("btnGoodBye").onclick = function() { speak("Good Bye"); };
+        document.getElementById("btnGreetings").onclick = function() { speak("Greetings"); };
+    }
+</script>
+</head>
+<body>
+    <h1>Pset 4 - Problem 3</h1>
+    <form>
+        <label>Your name:</label> <input type="text" id="userName">
+        <br /><br />
+        <input type="button" id="btnHello" value="Hello">
+        <input type="button" id="btnGoodBye" value="Good Bye">
+        <input type="button" id="btnGreetings" value="Greetings">
+    </form>
+    <div id="answer">&nbsp;</div>
+</body>
+</html>

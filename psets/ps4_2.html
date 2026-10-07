@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pset 4 - Problem 2</title>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+    ul.list {list-style-type:none}
+</style>
+</head>
+<body>
+    <h1>Pset 4 - Problem 2</h1>
+    <div id="answer">&nbsp;</div>
+<script>
+    /* Problem 2:
+        Create a string with several names separated by a comma - for example,  "Pat, Chris, Marlon, Ferncroft, Assunta"
+        Using ONLY string or array methods,  display the names as a numbered list in the div created in task 0.  You may NOT use a for or while loop.
+        Hint1:  Think about the string method to turn the string into an array
+        Hint2: Think about the repetitive part of a list - ie, <li>anb</li>
+        Hint3: Think about methods of the array object that iterate through the array
+    */
+    names = "Pat, Chris, Marlon, Ferncroft, Assunta";
+    nameArray = names.split(", ");
+    listItems = nameArray.map((name, i) => "<li>"+(i+1)+". "+name+"</li>");
+    document.getElementById("answer").innerHTML = "<ul class='list'>"+listItems.join('')+"</ul>";
+</script>
+</body>
+</html>
