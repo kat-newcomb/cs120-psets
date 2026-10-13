@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON - Part 2</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+    .song {margin-bottom: 20px;}
+    .song .title {font-weight: bold;}
+</style>
+</head>
+<body>
+    <h1>JSON - Part 2</h1>
+    <div id="songList">&nbsp;</div>
+<script>
+    /*  Part 2: Read a JSON from a file
+        Using the same data, create a separate file called songs.json.  It should contain only the JSON object – you may not have any variable assignments in this file.
+
+        In json2.html, read the songs.json file using $.get and store in a variable.
+
+        Display the json data on the page within a <div> section (hint use the innerHTML property)
+        The information should be displayed similar to the following.  (Feel free to embellish the styling.)
+    */
+    $(document).ready(function()
+    {
+        $.get("songs.json", function(data)
+        {
+            songData = data;
+            html = "";
+            for (i=0; i<songData.songs.length; i++)
+            {
+                song = songData.songs[i];
+                html += "<div class='song'>"+
+                    "<div class='title'>"+song.title+"</div>"+
+                    "Artist: "+song.artist+"<br />"+
+                    "Genre: "+song.genres.join(", ")+"<br />"+
+                    "Released "+song.year+
+                    "</div>";
+            }
+            document.getElementById("songList").innerHTML = html;
+        });
+    });
+</script>
+</body>
+</html>

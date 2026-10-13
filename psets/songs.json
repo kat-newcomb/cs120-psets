@@ -1,0 +1,12 @@
+{
+    "songs": [
+        {"title": "The Logical Song", "artist": "Supertramp", "year": 1979, "genres": ["rock", "soft rock"]},
+        {"title": "Give a Little Bit", "artist": "Supertramp", "year": 1977, "genres": ["rock"]},
+        {"title": "Breakfast in America", "artist": "Supertramp", "year": 1979, "genres": ["rock", "pop"]},
+        {"title": "Dreamer", "artist": "Supertramp", "year": 1974, "genres": ["rock"]},
+        {"title": "Africa", "artist": "Toto", "year": 1982, "genres": ["pop", "soft rock"]},
+        {"title": "Mr. Blue Sky", "artist": "Electric Light Orchestra", "year": 1977, "genres": ["rock", "pop"]},
+        {"title": "Southern Nights", "artist": "Glen Campbell", "year": 1977, "genres": ["country", "pop"]},
+        {"title": "Break My Stride", "artist": "Matthew Wilder", "year": 1983, "genres": ["pop", "new wave"]}
+    ]
+}

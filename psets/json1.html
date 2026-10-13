@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON - Part 1</title>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+    #answer {word-wrap: break-word;}
+</style>
+</head>
+<body>
+<script>
+    /*  Part 1:  Create a JSON
+        In json1.html, create a JSON to represent a song list.  Each song should include the title, the artist, the year the song was released and one or more music genres (genre could be country, rock, pop, metal, ska, etc).  The genres should be stored as an array within the JSON.
+
+        The following requirements must be met:
+
+        At least 8 songs.
+        The data must be real. 
+        At least 3 genres
+        At least 3 artists 
+        Every song should be assigned a genre (and all genres should be used)
+        Every song should be assigned an artist (and all artists should be used)
+        At least two songs must have more than one genre.  
+        Place the JSON object at the top of the file - it should be assigned to a variable.
+
+        Convert the JSON object to a string and display the resulting text string.
+    */
+    songData = {
+        "songs": [
+            {"title": "The Logical Song", "artist": "Supertramp", "year": 1979, "genres": ["rock", "soft rock"]},
+            {"title": "Give a Little Bit", "artist": "Supertramp", "year": 1977, "genres": ["rock"]},
+            {"title": "Breakfast in America", "artist": "Supertramp", "year": 1979, "genres": ["rock", "pop"]},
+            {"title": "Dreamer", "artist": "Supertramp", "year": 1974, "genres": ["rock"]},
+            {"title": "Africa", "artist": "Toto", "year": 1982, "genres": ["pop", "soft rock"]},
+            {"title": "Mr. Blue Sky", "artist": "Electric Light Orchestra", "year": 1977, "genres": ["rock", "pop"]},
+            {"title": "Southern Nights", "artist": "Glen Campbell", "year": 1977, "genres": ["country", "pop"]},
+            {"title": "Break My Stride", "artist": "Matthew Wilder", "year": 1983, "genres": ["pop", "new wave"]}
+        ]
+    };
+</script>
+    <h1>JSON - Part 1</h1>
+    <div id="answer">&nbsp;</div>
+<script>
+    jsonString = JSON.stringify(songData);
+    document.getElementById("answer").textContent = jsonString;
+</script>
+</body>
+</html>

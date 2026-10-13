@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON - Part 3</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style type="text/css">
+    body {font-family: Arial, sans-serif; font-size: 18px; margin: 30px;}
+    h2 {margin-top: 30px;}
+</style>
+</head>
+<body>
+    <h1>JSON - Part 3</h1>
+    <select id="genreList"></select>
+    <input type="button" id="filterButton" value="Filter">
+    <div id="results">&nbsp;</div>
+<script>
+    /* Part 3: Filter the data
+
+    In json3.html, read data from  songs,json and store in a variable as you did in json2.html.
+
+    On the page, display a form that that will allow the user to select a genre as follows:
+
+    Include a drop-down box (<select>) listing the possible genres. The genres must be read from the JSON data  (it must NOT be hard coded). 
+    Ie, You should be able to change the JSON file and the <select> element will show the updated data when the page is refreshed.
+
+    Add a button labeled "Filter".  When the button is clicked, display the titles of songs that match the selected genre.  Do not display any other data for each song other than the title.
+
+    */
+    songData = null;
+
+    function renderGenres()
+    {
+        genres = [];
+        for (i=0; i<songData.songs.length; i++)
+        {
+           
+            song = songData.songs[i];
+            for (j=0; j<song.genres.length; j++)
+            {
+                if (genres.indexOf(song.genres[j]) == -1)
+                    genres.push(song.genres[j]);
+            }
+        }
+       
+        options = genres.map(genre => "<option value='"+genre+"'>"+genre+"</option>");
+        document.getElementById("genreList").innerHTML = options.join('');
+    }
+
+    function filterSongs()
+    {
+        genre = document.getElementById("genreList").value;
+        matches = songData.songs.filter(song => song.genres.includes(genre));
+       
+        titles = matches.map(song => "<div>"+song.title+"</div>");
+        document.getElementById("results").innerHTML = titles.join('');
+    }
+
+    $(document).ready(function()
+    {
+        $.get("songs.json", function(data)
+        {
+            songData = data;
+            renderGenres();
+        });
+       
+        document.getElementById("filterButton").onclick = filterSongs;
+    });
+</script>
+</body>
+</html>
