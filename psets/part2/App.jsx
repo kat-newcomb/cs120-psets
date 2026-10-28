@@ -1,3 +1,5 @@
+import './App.css'
+
 // Create an object with properties to represent the number value displayed
 // on the block and a background color (as a hex color)
 function Color(value, bgcolor)
@@ -8,15 +10,15 @@ function Color(value, bgcolor)
 
 // Create an array of nine of the objects (use any color combinations you want)
 // call it MyColors
-var MyColors = [new Color(1, "#ab0e10"),
-                new Color(2, "#e14648"),
-                new Color(3, "#2ec45b"),
-                new Color(4, "#197587"),
-                new Color(5, "#295bd1"),
-                new Color(6, "#e39c31"),
-                new Color(7, "#903ad6"),
-                new Color(8, "#f96f6f"),
-                new Color(9, "#26c2b2")];
+var MyColors = [new Color(1, "#111111"),
+                new Color(2, "#1F3A93"),
+                new Color(3, "#A91B3D"),
+                new Color(4, "#D4A017"),
+                new Color(5, "#111111"),
+                new Color(6, "#1F3A93"),
+                new Color(7, "#A91B3D"),
+                new Color(8, "#D4A017"),
+                new Color(9, "#111111")];
 
 // Create a JSX component to represent one block. Note that the background
 // color should be a property (attribute) and the number value should be

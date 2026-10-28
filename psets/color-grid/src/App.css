@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+/* On hover, the blocks should have a white background with black text. */
+.grid {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-template-rows: repeat(3, 110px);
+  gap: 4px;
+  background-color: black;
+  padding: 4px;
+  border: 4px solid black;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+}
+
+.block:hover {
+  background-color: white !important;
+  color: black;
+}
