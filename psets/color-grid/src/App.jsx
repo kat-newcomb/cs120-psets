@@ -10,15 +10,15 @@ function Color(value, bgcolor)
 
 // Create an array of nine of the objects (use any color combinations you want)
 // call it MyColors
-var MyColors = [new Color(1, "#111111"),
-                new Color(2, "#1F3A93"),
-                new Color(3, "#A91B3D"),
-                new Color(4, "#D4A017"),
-                new Color(5, "#111111"),
-                new Color(6, "#1F3A93"),
-                new Color(7, "#A91B3D"),
-                new Color(8, "#D4A017"),
-                new Color(9, "#111111")];
+var MyColors = [new Color(1, "black"),
+                new Color(2, "blue"),
+                new Color(3, "red"),
+                new Color(4, "gold"),
+                new Color(5, "black"),
+                new Color(6, "blue"),
+                new Color(7, "red"),
+                new Color(8, "gold"),
+                new Color(9, "black")];
 
 // Create a JSX component to represent one block. Note that the background
 // color should be a property (attribute) and the number value should be
@@ -27,7 +27,7 @@ var MyColors = [new Color(1, "#111111"),
 function Block({bgcolor, children})
 {
     const showValue = () => alert(children);
-    return <div className="block" style={{backgroundColor: bgcolor}} onClick={showValue}>{children}</div>
+    return <div className={"block " + bgcolor} onClick={showValue}>{children}</div>
 }
 
 // Now create a component called ColorGrid that creates the grid of blocks.

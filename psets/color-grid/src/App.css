@@ -23,7 +23,12 @@
   cursor: pointer;
 }
 
+.black {background-color: #111111;}
+.blue {background-color: #1F3A93;}
+.red {background-color: #A91B3D;}
+.gold {background-color: #D4A017;}
+
 .block:hover {
-  background-color: white !important;
+  background-color: white;
   color: black;
 }
