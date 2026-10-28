@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<title>Animal Flashcards</title>
+    <style type="text/css">
+        button {margin-right: 10px; padding: 10px 16px; font-size: 16px;}
+    </style>
+</head>
+<body>
+<div id='myapp'></div>
+<script type='text/babel'>
+// Create an object with properties to represent each animal (name) and the sound it makes
+function Animal(name, sound)
+{
+    this.name = name;
+    this.sound = sound;
+}
+
+// Create an array of 4 of the objects
+var animals = [new Animal("Dog", "woof"),
+               new Animal("Cat", "meow"),
+               new Animal("Cow", "moo"),
+               new Animal("Duck", "quack")];
+
+// Create a set of 4 buttons. They should be labelled with the names of 4 animals.
+// When the button is pressed, a popup should show the sound the animal makes.
+// For example, if the button face has "dog", the popup will show something like:
+// "The dog says woof"
+function AnimalButton(props)
+{
+    const speak = (name, sound, e) => alert("The " + name + " says " + sound);
+    return <button onClick={(e) => speak(props.name, props.sound, e)}>{props.name}</button>
+}
+
+// Create an <h1> that displays "Animal Flashcards" at the top of the page.
+var hello = <div>
+            <h1>Animal Flashcards</h1>
+            {animals.map((item, i) => <AnimalButton key={i} name={item.name} sound={item.sound} />)}
+            </div>
+
+ReactDOM.render(hello, myapp);
+</script>
+</body>
+</html>
